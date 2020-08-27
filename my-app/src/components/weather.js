@@ -21,8 +21,8 @@ class WeatherChart extends React.Component {
                             </SeriesDirective>
                             <SeriesDirective dataSource={this.data} xName='day' yName='min' type='Column'>
                             </SeriesDirective>
-                        <SeriesDirective dataSource={this.data} xName='day' yName='average' type='Column'>
-                    </SeriesDirective>
+                            <SeriesDirective dataSource={this.data} xName='day' yName='average' type='Column'>
+                            </SeriesDirective>
                     </SeriesCollectionDirective>
     </ChartComponent>;
     }
