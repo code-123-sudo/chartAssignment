@@ -1,15 +1,15 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { ChartComponent, SeriesCollectionDirective, SeriesDirective, Inject, ColumnSeries, Legend, Category, Tooltip, DataLabel, LineSeries } from '@syncfusion/ej2-react-charts';
-// data in original format to be passed through api
+// data in original format to be passed through data convert service
 import { days, max , min , average } from '../mockData/data';
-//data in required format after passing through api
-import { weatherData } from '../mockData/data';
+//utitlity service to convert data to desired format
+import { convertToChartFormat } from '../services/services';
 
 class WeatherChart extends React.Component {
     constructor() {
         super(...arguments);
-        this.data = weatherData;
+        this.data = convertToChartFormat(days,max,min,average);
         this.primaryxAxis = { valueType: 'Category', title: 'Days' };
         this.primaryyAxis = { minimum: 0, maximum: 80, interval: 20, title: 'Temperature' };
     }
